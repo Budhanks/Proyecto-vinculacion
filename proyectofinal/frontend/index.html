@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor Docente FES</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Header -->
+    <header class="header">
+      <h1><i class="fas fa-chalkboard-teacher"></i> Sistema Gestión Docente</h1>
+      <div class="header-actions">
+        <button id="btnExport" class="btn btn-export">
+          <i class="fas fa-file-excel"></i> Exportar Excel
+        </button>
+      </div>
+    </header>
+
+    <!-- Filtros -->
+    <div class="filters">
+      <div class="filter-group">
+        <label for="filterCategory"><i class="fas fa-filter"></i> Categoría:</label>
+        <select id="filterCategory">
+          <option value="all">Todas</option>
+          <option value="Interino">Interino</option>
+          <option value="Definitivo">Definitivo</option>
+          <option value="Tiempo Completo">Tiempo Completo</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="search"><i class="fas fa-search"></i> Buscar:</label>
+        <input type="text" id="search" placeholder="Nombre o email...">
+      </div>
+    </div>
+
+    <!-- Tabla -->
+    <div class="table-container">
+      <table id="docentesTable">
+        <thead>
+          <tr>
+            <th>Nombre <i class="fas fa-sort"></i></th>
+            <th>Categoría <i class="fas fa-sort"></i></th>
+            <th>Antigüedad <i class="fas fa-sort"></i></th>
+            <th>Grado Académico</th>
+            <th>Email</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Paginación -->
+    <div class="pagination">
+      <button id="btnPrev" disabled><i class="fas fa-chevron-left"></i></button>
+      <span id="pageInfo">Página 1 de 1</span>
+      <button id="btnNext" disabled><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
