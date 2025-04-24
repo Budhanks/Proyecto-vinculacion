@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   
     const cargarDocentes = async () => {
       try {
-        const response = await fetch('http://localhost:3024/api/docentes');
+        const response = await fetch('http://localhost:4000/api/docentes');
         const docentes = await response.json();
         
         tbody.innerHTML = docentes.map(docente => `
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
   
     btnExport.addEventListener('click', () => {
-      window.open('http://localhost:3024/api/docentes/exportar-excel');
+      window.open('http://localhost:4000/api/docentes/exportar-excel');
     });
   
     cargarDocentes();
